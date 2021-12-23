@@ -294,7 +294,7 @@ def copy_bytes_py3():
         # https://stackoverflow.com/questions/6624453/whats-the-correct-way-to-convert-bytes-to-a-hex-string-in-python-3
         data = idc.get_bytes(start, end - start).hex()
         print ("Bytes copied: %s" % data)
-        copy_to_clip(data)
+        copy_to_clip(str(data))
     else:
         start = idc.SelStart()
         end = idc.SelEnd()
@@ -304,7 +304,7 @@ def copy_bytes_py3():
             end = idaapi.get_item_end(ea)
         data = idc.GetManyBytes(start, end-start).hex()
         print( "Bytes copied: %s" % data)
-        copy_to_clip(data)
+        copy_to_clip(str(data))
     return 
 
 
